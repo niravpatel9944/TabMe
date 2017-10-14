@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<!-- Start :: Main Area -->
+<main class="site-main">
+    <div class="site-content">
+        <div class="demo-wrapper">
+            <section class="header-area clearfix">
+                <div class="title-area">
+                    <h3 class="mb-4">Rooms</h3>
+                </div>
+                <div class="nav-tools-area">
+                    <form class="form-inline">
+                        <a href="~/Room/Create" class="btn btn-default btn-sm">New Room</a>
+                    </form>
+                </div>
+            </section>
+            <div class="card">
+                <form>
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Room Name">
+                        </div>
+                        <div class="col">
+                            <select class="form-control" id="select-package">
+                                <option>Select Package</option>
+                                <option id="1">Package1</option>
+                                <option id="2">Package2</option>
+                                <option id="3">Package3</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card">
+                @Html.Action("List")
+            </div>
+        </div>
+    </div>
+</main>
+<!-- End :: Main Area -->
+
+

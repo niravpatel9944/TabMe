@@ -1,0 +1,226 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Tab Me</title>
+    <meta name="description" content="Tab Me">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!--fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/material-design-iconic-font.css" rel="stylesheet" />
+    <!--css-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/animate.min.css" rel="stylesheet" />
+    <link href="assets/css/hamburgers.css" rel="stylesheet" />
+    <link href="assets/css/perfect-scrollbar.min.css" rel="stylesheet" />
+    <link href="assets/css/site.css" rel="stylesheet" />
+    <link href="assets/css/fileinput.min.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap-wysihtml5.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script>
+        Breakpoints({
+            xs: {
+                min: 0,
+                max: 575
+            },
+            sm: {
+                min: 576,
+                max: 767
+            },
+            md: {
+                min: 768,
+                max: 991
+            },
+            lg: {
+                min: 992,
+                max: 1199
+            },
+            xl: {
+                min: 1200,
+                max: Infinity
+            }
+        });
+    </script>
+</head>
+
+<body class="menubar-left menubar-light dashboard dashboard-v1 demo-examples demo-table-datatables">
+    <!-- Start :: Header -->
+    <nav class="site-navbar navbar fixed-top navbar-toggleable-sm navbar-inverse bg-indigo-500">
+        <div class="navbar-header">
+            <a href="dashboard.html" class="navbar-brand">
+                <span class="brand-icon"><i class="fa fa-houzz"></i></span>
+                <span class="brand-name hidden-fold">Tab Me</span>
+            </a>
+            <button data-toggle="menubar" class="mr-auto hidden-md-up hamburger hamburger--collapse js-hamburger" type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+            <button type="button" class="navbar-toggler hidden-md-up collapsed" data-toggle="collapse" data-target="#site-navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="zmdi zmdi-hc-lg zmdi-more"></span>
+            </button>
+        </div>
+        <!-- .navbar-header -->
+        <div class="collapse navbar-collapse" id="site-navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item hidden-sm-down">
+                    <button data-toggle="menubar-fold" class="nav-link hamburger hamburger--arrowalt is-active js-hamburger" type="button">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                </li>
+                <!--<li class="nav-item d-flex align-items-center">
+                    <h5 class="hidden-sm-down m-0 ml-3 page-title">Dashboard</h5>
+                </li>-->
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a href="javascript:void(0)" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-hc-lg zmdi-notifications"></i></a>
+                    <div class="dropdown-menu media-list float-right animated scaleInDownLeft">
+                        <a href="javascript:void(0)" class="dropdown-item media">
+                            <div class="avatar avatar-sm avatar-circle">
+                                <img src="assets/images/221.jpg" alt=""> <i class="status status-online"></i>
+                            </div>
+                            <div class="media-body">
+                                <h6 class="media-heading">John Doe</h6><small class="media-meta">Active now</small>
+                            </div>
+                        </a>
+                        <!-- ./media -->
+                        <a href="javascript:void(0)" class="dropdown-item media">
+                            <div class="avatar avatar-sm avatar-circle">
+                                <img src="assets/images/205.jpg" alt=""> <i class="status status-offline"></i>
+                            </div>
+                            <div class="media-body">
+                                <h6 class="media-heading">John Doe</h6><small class="media-meta">2 hours ago</small>
+                            </div>
+                        </a>
+                        <!-- ./media -->
+                        <a href="javascript:void(0)" class="dropdown-item media">
+                            <div class="avatar avatar-sm avatar-circle">
+                                <img src="assets/images/207.jpg" alt=""> <i class="status status-away"></i>
+                            </div>
+                            <div class="media-body">
+                                <h6 class="media-heading">Sara Smith</h6><small class="media-meta">idle 5 min ago</small>
+                            </div>
+                        </a>
+                        <!-- ./media -->
+                        <a href="javascript:void(0)" class="dropdown-item media">
+                            <div class="avatar avatar-sm avatar-circle">
+                                <img src="assets/images/211.jpg" alt=""> <i class="status status-away"></i>
+                            </div>
+                            <div class="media-body">
+                                <h6 class="media-heading">Donia Dyab</h6><small class="media-meta">idle 5 min ago</small>
+                            </div>
+                        </a>
+                        <!-- ./media -->
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="javascript:void(0)" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-hc-lg zmdi-settings"></i></a>
+                    <div class="dropdown-menu float-right animated scaleInDownLeft">
+                        <a href="myprofile.html" class="dropdown-item py-3"><i class="mr-3 zmdi-hc-lg fa Example of fa-user-circle"></i>My Profile</a>
+                        <a href="login.html" class="dropdown-item py-3"><i class="mr-3 zmdi-hc-lg fa fa-power-off"></i>Log Out</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+    <!-- End :: Header -->
+    <!-- Start :: Body Area -->
+    <div class="site-wrapper">
+        <!-- Start :: Sidebar -->
+        <aside class="site-menubar">
+            <div class="site-user">
+                <div class="media align-items-center">
+                    <a href="javascript:void(0)">
+                        <img class="avatar avatar-circle" src="assets/images/221.jpg" alt="avatar">
+                    </a>
+                    <div class="media-body hidden-fold">
+                        <h6 class="mborder-a-0"><a href="javascript:void(0)" class="username">John Doe</a></h6>
+                        <div class="dropdown">
+                            <a href="javascript:void(0)" class="usertitle"><small>Admin</small></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Start :: Menu -->
+            <div class="menubar-scroll-wrapper">
+                <div class="site-menubar-inner">
+                    <ul class="site-menu">
+                        <li>
+                            <a href="dashboard.html">
+                                <i class="menu-icon zmdi zmdi-view-dashboard zmdi-hc-lg"></i>
+                                <span class="menu-text">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="rooms.html">
+                                <i class="menu-icon zmdi zmdi-home zmdi-hc-lg"></i>
+                                <span class="menu-text">Rooms</span>
+                            </a>
+                        </li>
+                        <!--<li>
+                            <a href="package.html">
+                                <i class="menu-icon zmdi zmdi-calendar  zmdi-hc-lg"></i>
+                                <span class="menu-text">Package</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" class="submenu-toggle">
+                                <i class="menu-icon zmdi zmdi-home zmdi-hc-lg"></i>
+                                <span class="menu-text">Rooms</span> <i class="menu-caret zmdi zmdi-hc-sm zmdi-chevron-right"></i>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="../leftbar/index.html"><span class="menu-text">Leftbar</span></a>
+                                </li>
+                                <li>
+                                    <a href="../topbar/index.html"><span class="menu-text">Topbar</span></a>
+                                </li>
+                            </ul>
+                        </li>-->
+                    </ul>
+                </div>
+            </div>
+            <!-- End :: Menu -->
+        </aside>
+        <!-- End :: Sidebar -->
+        <!-- Start :: Main Area -->
+        <main class="site-main">
+            <div class="site-content">
+                <div class="demo-wrapper">
+                    <section class="header-area clearfix">
+                        <div class="title-area">
+                            <h3 class="mb-4">My Profile</h3>
+                        </div>  
+                    </section>
+                    
+                </div>
+            </div>
+        </main>
+        <!-- End :: Main Area -->
+    </div>
+    <!-- End :: Body Area -->
+    <!-- js -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/tether.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
+    <script src="assets/js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="assets/js/fileinput.min.js"></script>
+    <script src="assets/js/wysihtml5-0.3.0.js"></script>
+    <script src="assets/js/bootstrap-wysihtml5.js"></script>
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/bootstrap-datepicker.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/site.js"></script>
+    <script src="assets/js/menubar.js"></script>
+</body>
+</html>

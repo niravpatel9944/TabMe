@@ -1,0 +1,72 @@
+﻿@model TabMe.ViewModel.RoomModel
+@using TabMe.ViewModel.Enum;
+@{
+    ViewBag.Title = "Create";
+}
+
+<!-- Start :: Main Area -->
+<main class="site-main">
+    <div class="site-content">
+        <div class="demo-wrapper">
+            <section class="header-area clearfix">
+                <div class="title-area">
+                    <h3 class="mb-4">Add Room</h3>
+                </div>
+            </section>
+            <div class="card">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        @Html.Partial("_Room.Info", Model)
+                        <div class="form-group row">
+                            <div class="col-md-5 col-sm-10 offset-sm-2">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <a href="~/Room" class="btn btn-outline-primary">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</main>
+<!-- End :: Main Area -->
+@section scripts {
+    <script>
+        $(document).ready(function() {
+            $('#fine-uploader-gallery').fineUploader({
+                template: 'qq-template-gallery',
+                request: {
+                    endpoint: '/Room/AsyncUpload'
+                },
+                thumbnails: {
+                    placeholders: {
+                        waitingPath: '/content/fine-uploader/waiting-generic.png',
+                        notAvailablePath: '/content/fine-uploader/not_available-generic.png'
+                    }
+                },
+                validation: {
+                    allowedExtensions: ['jpeg', 'jpg', 'gif', 'png']
+                }
+            }).on("complete", function (event, id, name, responseJSON, xhr) {
+                console.log(responseJSON);
+                if (responseJSON.success) {
+                    var pictureIds = $("#Room_PictureIds").val();
+                    if (pictureIds.length == 0 || pictureIds == undefined || pictureIds == "0") pictureIds = ",";
+                    pictureIds += responseJSON.pictureId + ",";
+                    $("#Room_PictureIds").val(pictureIds);
+                    console.log(pictureIds);
+                }
+            });
+            @*$("#@(clientId + "remove")").click(function(e) {
+                $("#@(clientId + "image")").html("<img src='@pictureService.GetDefaultPictureUrl()'/>");
+                $("#@(clientId + "value") input").val(0);
+                $(this).hide();
+            });*@
+        });
+</script>
+
+}

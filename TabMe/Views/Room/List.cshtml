@@ -1,0 +1,48 @@
+﻿@model IEnumerable<TabMe.ViewModel.RoomViewModel>
+@using TabMe.ViewModel.Enum;
+@{
+    var counter = 0;
+ }
+<table class="table table-responsive datatable">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Room Name</th>
+            <th>Code</th>
+            <th>Package</th>
+            <th>Capacity</th>
+            <th>Rate</th>
+            @*<th>City</th>*@
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            counter++;
+            <tr>
+                <td>@counter</td>
+                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.Code)</td>
+                <td>@Html.DisplayFor(modelItem => item.Package)</td>
+                <td>@Html.DisplayFor(modelItem => item.Capacity)</td>
+                <td>$@Html.DisplayFor(modelItem => item.Rate)</td>
+                <td>
+                    @if (item.Status)
+                    {
+                        <span class="label badge-success">Free</span>
+                    }
+                    else
+                    {
+                        <span class="label badge-info">Occupied</span>
+                    }
+                </td>
+                <td class="action">
+                    <a href="/Room/Edit/@item.Id" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
+                    <a class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

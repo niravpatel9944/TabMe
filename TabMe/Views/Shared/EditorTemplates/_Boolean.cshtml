@@ -1,0 +1,12 @@
+﻿@model Boolean?
+@{
+    var o = ViewData.ModelMetadata;
+    if (ViewData.Model == null)
+    {
+        ViewData.Model = false;
+    }
+    bool model = (bool)ViewData.Model;
+}
+@Html.CheckBoxFor(m => m.Value)
+<input type="checkbox" id="@ViewData.TemplateInfo.HtmlFieldPrefix" value="@ViewData.Model">
+<label for="@ViewData.TemplateInfo.HtmlFieldPrefix"></label>
